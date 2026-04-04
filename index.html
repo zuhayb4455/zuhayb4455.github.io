@@ -962,3 +962,35 @@
   </div>
 
 </div>
+
+<!-- RESUME MODAL -->
+<div class="resume-overlay" id="resumeOverlay" onclick="closeResume(event)">
+  <div class="resume-modal">
+    <div class="resume-modal-header">
+      <span class="resume-modal-title">📄 Zuhayb Hussein — Resume</span>
+      <button class="resume-modal-close" onclick="closeResume()">✕</button>
+    </div>
+    <img src="resume.png" alt="Zuhayb Hussein Resume" />
+  </div>
+</div>
+
+<script>
+  function openResume() {
+    document.getElementById('resumeOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeResume(e) {
+    if (e && e.target !== document.getElementById('resumeOverlay') && !e.target.classList.contains('resume-modal-close')) return;
+    document.getElementById('resumeOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.getElementById('resumeOverlay').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+</script>
+
+</body>
+</html>
